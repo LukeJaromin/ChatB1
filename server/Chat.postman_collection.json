@@ -1,0 +1,329 @@
+{
+	"info": {
+		"_postman_id": "5ad1d5d0-582c-4e8b-87ea-fe37e6bb5845",
+		"name": "Chat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/jee/api/user/Ewa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jee",
+						"api",
+						"user",
+						"Ewa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User exists",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/jee/api/user/exists/Adam",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jee",
+						"api",
+						"user",
+						"exists",
+						"Adam"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create channel",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "Ewa",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/jee/api/channel/plotki",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jee",
+						"api",
+						"channel",
+						"plotki"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add user to channel",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "Ewa",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/jee/api/channel/plotki/Jan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jee",
+						"api",
+						"channel",
+						"plotki",
+						"Jan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Leave channel",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "username",
+						"value": "Jan",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/jee/api/channel/leave/plotki",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jee",
+						"api",
+						"channel",
+						"leave",
+						"plotki"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get channel history",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "Ewa",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/jee/api/message/channel/plotki",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jee",
+						"api",
+						"message",
+						"channel",
+						"plotki"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send public message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "Jan",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\":\"new message\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/jee/api/message/public",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jee",
+						"api",
+						"message",
+						"public"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send channel message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "Ewa",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"channel\":\"plotki\",\r\n    \"message\":\"przesyłam najświeższą plotkę\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/jee/api/message/channel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jee",
+						"api",
+						"message",
+						"channel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send private message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "Jan",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\":\"przesyłam projekt\",\r\n    \"receiver\":\"Łukasz\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/jee/api/message/private",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jee",
+						"api",
+						"message",
+						"private"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload file",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "Jan",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"receiver\":\"Ewa\",\r\n    \"name\":\"MójPlik.txt\",\r\n    \"path\":\"C:/Users/luk78/Desktop/Desktop/MójPlik.txt\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/jee/api/file/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jee",
+						"api",
+						"file",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
